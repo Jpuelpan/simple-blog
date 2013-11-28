@@ -16,11 +16,16 @@
         <a href="/admin">Administración</a>
       </h3>
 
-      <ul class="nav nav-pills pull-right">
-        <li class="active">
-          <a href="/admin/logout">Cerrar sesión</a>
-        </li>
-      </ul>
+      <?php if( user_signed_in() ){ ?>
+        <ul class="nav nav-pills pull-right">
+          <li>
+            <a href="/admin/posts/new">Crear Post</a>
+          </li>
+          <li>
+            <a href="/admin/logout">Cerrar sesión</a>
+          </li>
+        </ul>
+      <?php } ?>
     </div>
   </header>
 

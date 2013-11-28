@@ -2,6 +2,8 @@
 require_once('config.php');
 require_once('helpers.php');
 
+use Fuel\Validation\Base as Validator;
+
 on('GET', '/', function (){
   $posts = Post::published()->orderBy('created_at')->get();
 
@@ -74,11 +76,9 @@ prefix('admin', function(){
     }
   });
 
-
-
-
   # Posts CRUD
   prefix('/posts', function(){
+    
     # Nuevo Post
     on('GET', '/new', function(){
       $categories = Category::all();
@@ -87,9 +87,25 @@ prefix('admin', function(){
 
     # Crear Post
     on('POST', '/new', function(){
-      $post = new Post(params('post'));
-      $post->user_id = current_user()->id;
-      $post->save();
+      $form = new Validator();
+
+      $form->validate('title', function($v){
+        return $v->require();
+      });
+
+      $form->execute(params('post'));
+      // $errors = $form->getError();
+
+      // foreach ($form->getError() as $error) {
+      //   echo '<pre>'; print_r($error); echo '</pre>';
+      // }
+
+      // echo '<pre>'; print_r($form->getError('title')->getErrorMessage()); echo '</pre>'; die;
+      // echo '<pre>'; print_r($form->getErrorMessage('title')); echo '</pre>'; die;
+
+      // $post = new Post(params('post'));
+      // $post->user_id = current_user()->id;
+      // $post->save();
     });
 
     # Editar Post
@@ -114,7 +130,6 @@ prefix('admin', function(){
     });
   });
 });
-
 
 dispatch();
 ?>
