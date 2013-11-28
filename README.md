@@ -34,7 +34,7 @@ Finally run the server through Apache or NGINX or simply
     $ php -S localhost:8080 index.php
 
 
-## Creadits
+## Credits
 
 The credits go to:
 
