@@ -15,9 +15,4 @@ $db_data = require_once('database.php');
 $capsule = new Capsule;
 $capsule->addConnection($db_data);
 $capsule->bootEloquent();
-
-# Cargar todos los modelos
-foreach(glob('./models/*.php') as $file){
-  require $file;
-}
 ?>
