@@ -36,7 +36,7 @@ Finally run the server through Apache or NGINX or simply
 
 ## Creadits
 
-The credits goes for:
+The credits go to:
 
 - [Micro Framework Dispatch](https://github.com/noodlehaus/dispatch)
 - [Eloquent ORM](https://github.com/illuminate/database)
