@@ -126,9 +126,34 @@ prefix('admin', function(){
     });
 
     # Actualizar Post
-    on('POST', '/edit/:id', function(){
+    on('POST', '/:id/edit', function(){
       $post = Post::find(params('id'));
-      render('admin/posts/edit', ['post' => $post], 'admin/layout');
+
+      $validator = new Validator();
+      $validator->addField('title', 'Titulo')
+                  ->required()
+                  ->setMessage('El {label} es requerido.')
+                ->addField('body', 'Contenido')
+                  ->required()
+                  ->setMessage('El {label} es requerido.')
+                ->addField('status', 'Estado')
+                  ->required()
+                  ->setMessage('Debe seleccionar un estado.')
+                ->addField('category_id', 'Categoría')
+                  ->required()
+                  ->setMessage('La {label} es requerida.');
+      
+      $result = $validator->run(params('post'));
+
+      if( $result->isValid() ){
+        $post->update(params('post'));
+
+        flash('success', 'Se ha actualizado el post "' . $post->title . '"');
+        redirect('/admin');
+      }else{
+        flash('errors', $result->getErrors());
+        redirect('/admin/posts/' . $post->id . '/edit');
+      }
     });
 
     # Eliminar Post
