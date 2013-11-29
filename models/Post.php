@@ -15,8 +15,14 @@
  */
 class Post extends Illuminate\Database\Eloquent\Model
 {
+  #
+  # Mass assignment fields
+  #
   protected $fillable = array('title', 'body', 'status', 'category_id');
 
+  #
+  # Relations
+  #
   public function user()
   {
     return $this->belongsTo('User');
@@ -32,7 +38,9 @@ class Post extends Illuminate\Database\Eloquent\Model
     return $this->hasMany('Comment');
   }
 
+  # 
   # Scopes
+  # 
   public function scopePublished($query)
   {
     return $query->where('status', 'Publicado');

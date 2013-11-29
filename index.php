@@ -2,7 +2,7 @@
 require_once('config.php');
 require_once('helpers.php');
 
-use Fuel\Validation\Base as Validator;
+use Fuel\Validation\Validator as Validator;
 
 on('GET', '/', function (){
   $posts = Post::published()->orderBy('created_at')->get();
@@ -38,7 +38,7 @@ prefix('admin', function(){
     if( !user_signed_in() ){
       redirect('/admin/login');
     }else{
-      $posts = current_user()->posts;
+      $posts = current_user()->posts()->orderBy('created_at', 'DESC')->get();
       render('admin/index', ['posts' => $posts], 'admin/layout');
     }
   });
@@ -87,25 +87,34 @@ prefix('admin', function(){
 
     # Crear Post
     on('POST', '/new', function(){
-      $form = new Validator();
+      $validator = new Validator();
 
-      $form->validate('title', function($v){
-        return $v->require();
-      });
+      $validator->addField('title', 'Titulo')
+                  ->required()
+                  ->setMessage('El {label} es requerido.')
+                ->addField('body', 'Contenido')
+                  ->required()
+                  ->setMessage('El {label} es requerido.')
+                ->addField('status', 'Estado')
+                  ->required()
+                  ->setMessage('Debe seleccionar un estado.')
+                ->addField('category_id', 'Categoría')
+                  ->required()
+                  ->setMessage('La {label} es requerida.');
+      
+      $result = $validator->run(params('post'));
 
-      $form->execute(params('post'));
-      // $errors = $form->getError();
+      if( $result->isValid() ){
+        $post = new Post(params('post'));
+        $post->user_id = current_user()->id;
+        $post->save();
 
-      // foreach ($form->getError() as $error) {
-      //   echo '<pre>'; print_r($error); echo '</pre>';
-      // }
-
-      // echo '<pre>'; print_r($form->getError('title')->getErrorMessage()); echo '</pre>'; die;
-      // echo '<pre>'; print_r($form->getErrorMessage('title')); echo '</pre>'; die;
-
-      // $post = new Post(params('post'));
-      // $post->user_id = current_user()->id;
-      // $post->save();
+        flash('success', 'Se ha creado el post "' . $post->title . '"');
+        redirect('/admin');
+      }else{
+        flash('errors', $result->getErrors());
+        redirect('/admin/posts/new');
+      }
     });
 
     # Editar Post
