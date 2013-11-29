@@ -42,6 +42,11 @@ header{
   speak: none;
 }
 
+#messages-area .alert{
+  border-radius: 0;
+  margin: 10px 0;
+}
+
 aside{
   margin-top: 30px;
 }

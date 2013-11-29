@@ -31,6 +31,18 @@
 
   <div class="container">
     <section id="main" class="col-sm-12">
+      
+      <div id="messages-area">
+        <?php if( flash('success') ){ ?>
+          <p class="alert alert-success"><?php echo flash('success') ?></p>
+        <?php } ?>
+
+        <?php if( flash('error') ){ ?>
+          <p class="alert alert-danger"><?php echo flash('error') ?></p>
+        <?php } ?>
+      </div>
+
+      <div class="clearfix"></div>
       <?php echo content(); ?>
     </section>
   </div>
