@@ -1,4 +1,4 @@
-<form action="/admin/posts/new" method="POST">
+<form action="<?php echo (isset($post) && $post->id > 0) ? '/admin/posts/update' : '/admin/posts/new' ?>" method="POST">
   <?php if( flash('errors') ){ ?>
     <p class="alert alert-danger">
       <?php foreach (flash('errors') as $error) { ?>

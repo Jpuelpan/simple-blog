@@ -118,9 +118,11 @@ prefix('admin', function(){
     });
 
     # Editar Post
-    on('GET', '/edit/:id', function(){
+    on('GET', '/:id/edit', function(){
       $post = Post::find(params('id'));
-      render('admin/posts/edit', ['post' => $post], 'admin/layout');
+      $categories = Category::all();
+
+      render('admin/posts/edit', ['post' => $post, 'categories' => $categories], 'admin/layout');
     });
 
     # Actualizar Post

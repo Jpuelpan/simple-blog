@@ -2,11 +2,12 @@
 
 <?php if(count($posts) > 0){ ?>
   <?php foreach ($posts as $post) { ?>
-    <panel class="panel-default">
-      <div class="panel-body">
-        <h4><?php echo $post->title ?></h4>
-      </div>
-    </panel>
+    <article class="post-wrapper clearfix">
+      <h3>
+        <a href="/admin/posts/<?php echo $post->id ?>/edit"><?php echo $post->title ?></a>
+      </h3>
+      <p class="post-body"><?php echo $post->body ?></p>
+    </article>
   <?php } ?>
 <?php }else{ ?>
   <h4 style="text-align: center;">No tiene ningun post creado</h4>
