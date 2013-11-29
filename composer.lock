@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "02a4d110fafdea33f361e7e4627abac5",
+    "hash": "362e5ceaae2ae33e69326395f8aea0c1",
     "packages": [
         {
             "name": "dispatch/dispatch",
@@ -56,39 +56,47 @@
             "time": "2013-09-30 14:41:01"
         },
         {
-            "name": "fuel/validation",
+            "name": "fuelphp/validation",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fuelphp-storage/validation.git",
-                "reference": "d074ad662a3d110c0e3bc8cd35896d4728be1bd4"
+                "url": "https://github.com/fuelphp/validation.git",
+                "reference": "33ff0a057a43b9e88012648687d805ebcf047f07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuelphp-storage/validation/zipball/d074ad662a3d110c0e3bc8cd35896d4728be1bd4",
-                "reference": "d074ad662a3d110c0e3bc8cd35896d4728be1bd4",
+                "url": "https://api.github.com/repos/fuelphp/validation/zipball/33ff0a057a43b9e88012648687d805ebcf047f07",
+                "reference": "33ff0a057a43b9e88012648687d805ebcf047f07",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Fuel\\Validation": "classes/"
+                    "Fuel\\Validation": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Framework independent Validation library.",
-            "homepage": "http://fuelphp.com/",
-            "keywords": [
-                "validation",
-                "validator"
+            "authors": [
+                {
+                    "name": "FuelPHP Development Team",
+                    "email": "team@fuelphp.com"
+                }
             ],
-            "time": "2012-11-30 06:01:48"
+            "description": ".",
+            "homepage": "https://github.com/fuelphp/validation",
+            "keywords": [
+                "validation"
+            ],
+            "time": "2013-11-26 14:08:08"
         },
         {
             "name": "illuminate/container",
@@ -353,7 +361,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fuel/validation": 20
+        "fuelphp/validation": 20
     },
     "platform": {
         "php": ">= 5.4.0"
