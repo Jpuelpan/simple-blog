@@ -34,13 +34,13 @@ Finally run the server through Apache or NGINX or simply
     $ php -S localhost:8080 index.php
 
 
-## Creadits
+## Credits
 
 The credits go to:
 
 - [Micro Framework Dispatch](https://github.com/noodlehaus/dispatch)
 - [Eloquent ORM](https://github.com/illuminate/database)
-- [Illuminate Validation](https://github.com/illuminate/validation)
+- [FuelPHP Validation](https://github.com/fuelphp-storage/validation)
 
 
 The end :)
