@@ -13,7 +13,7 @@
   </div>
   <div class="form-group">
     <label for="">Contenido</label>
-    <textarea name="post[body]" class="form-control" cols="30" rows="10"><?php echo isset($post) ? $post->body : '' ?></textarea>
+    <textarea name="post[body]" class="ckeditor form-control"><?php echo isset($post) ? $post->body : '' ?></textarea>
   </div>
   <div class="form-group">
     <div class="row">

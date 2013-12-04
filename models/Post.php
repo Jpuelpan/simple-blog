@@ -66,7 +66,7 @@ class Post extends Illuminate\Database\Eloquent\Model
 
   public function excerpt($limit = 500)
   {
-    return substr($this->body, 0, $limit) . '...';
+    return substr(strip_tags($this->body), 0, $limit) . '...';
   }
 }
 

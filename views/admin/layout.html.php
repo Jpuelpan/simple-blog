@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script type="text/javascript" src="/assets/js/jquery.js"></script>
   <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+  
+  <script src="/assets/ckeditor/ckeditor.js"></script>
+  <script src="/assets/ckeditor/config.js"></script>
 </head>
 <body>
 
