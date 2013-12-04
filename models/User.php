@@ -23,6 +23,14 @@ class User extends Illuminate\Database\Eloquent\Model
   {
     return $this->name . ' ' . $this->last_name;
   }
+
+  #
+  # Static functions
+  #
+  public static function auth($email, $password)
+  {
+    return User::whereRaw('password = ? AND email = ?', array($password, $email))->first();
+  }
 }
 
 ?>

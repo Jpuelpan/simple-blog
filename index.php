@@ -55,7 +55,7 @@ prefix('admin', function(){
       return false;
     }
     
-    $user = User::whereRaw('password = ? AND email = ?', array(params('password'), params('email')))->first();
+    $user = User::auth(params('email'), params('password'));
 
     if( $user ){
       session('authenticated', true);
