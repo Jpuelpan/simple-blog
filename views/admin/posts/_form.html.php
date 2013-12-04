@@ -39,4 +39,7 @@
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Guardar</button>
+  <?php if( isset($post) ){ ?>
+    <a href="/admin/posts/<?php echo $post->id ?>/destroy" class="btn btn-danger">Eliminar Post</a>
+  <?php } ?>
 </form>

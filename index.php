@@ -157,7 +157,7 @@ prefix('admin', function(){
     });
 
     # Eliminar Post
-    on('GET', '/destroy/:id', function(){
+    on('GET', '/:id/destroy', function(){
       $post = Post::find(params('id'));
       if($post->delete()){
         flash('success', 'El post se ha eliminado correctamente');
