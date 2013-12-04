@@ -55,6 +55,14 @@ class Post extends Illuminate\Database\Eloquent\Model
   {
     return $query->orderBy('created_at', 'DESC');
   }
+
+  #
+  # Instance methods
+  #
+  public function human_date()
+  {
+    return date('d/m/Y H:i:s', strtotime($this->created_at));
+  }
 }
 
 ?>
