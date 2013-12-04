@@ -42,6 +42,7 @@ The credits go to:
 - [Eloquent ORM](https://github.com/illuminate/database)
 - [FuelPHP Validation](https://github.com/fuelphp/validation)
 - [Bootstrap](https://github.com/twbs/bootstrap)
+- [CKEditor](http://ckeditor.com/)
 
 
 The end :)
