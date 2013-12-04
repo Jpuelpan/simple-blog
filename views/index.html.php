@@ -8,6 +8,6 @@
       <span class="post-author"><?php echo 'Creado por ' . $post->user->full_name(); ?></span>
       <span class="post-comments"><?php echo count($post->comments) . ' comentario'; ?></span>
     </p>
-    <p class="post-body"><?php echo $post->body ?></p>
+    <p class="post-body"><?php echo $post->excerpt() ?></p>
   </article>
 <?php } ?>

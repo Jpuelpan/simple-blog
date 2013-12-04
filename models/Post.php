@@ -63,6 +63,11 @@ class Post extends Illuminate\Database\Eloquent\Model
   {
     return date('d/m/Y H:i:s', strtotime($this->created_at));
   }
+
+  public function excerpt($limit = 500)
+  {
+    return substr($this->body, 0, $limit) . '...';
+  }
 }
 
 ?>

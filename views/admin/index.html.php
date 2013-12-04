@@ -6,7 +6,7 @@
       <h3>
         <a href="/admin/posts/<?php echo $post->id ?>/edit"><?php echo $post->title ?></a>
       </h3>
-      <p class="post-body"><?php echo $post->body ?></p>
+      <p class="post-body"><?php echo $post->excerpt() ?></p>
     </article>
   <?php } ?>
 <?php }else{ ?>
