@@ -35,7 +35,9 @@
 
   <div class="container">
     <section id="main" class="col-sm-8">
-      <?php echo content(); ?>
+      <div class="row">
+        <?php echo content(); ?>
+      </div>
     </section>
 
     <aside class="col-sm-4">
