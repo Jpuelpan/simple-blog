@@ -5,13 +5,13 @@ require_once('helpers.php');
 use Fuel\Validation\Validator as Validator;
 
 on('GET', '/', function (){
-  $posts = Post::published()->orderBy('created_at')->get();
+  $posts = Post::published()->latest()->get();
 
   render('index', array('posts' => $posts));
 });
 
 on('GET', '/posts/:id', function (){
-  $posts = Post::published()->orderBy('created_at')->get();
+  $posts = Post::published()->latest()->get();
   $post  = Post::published()->where('id', params('id'))->first();
 
   render('posts/show', array(
@@ -38,7 +38,7 @@ prefix('admin', function(){
     if( !user_signed_in() ){
       redirect('/admin/login');
     }else{
-      $posts = current_user()->posts()->orderBy('created_at', 'DESC')->get();
+      $posts = current_user()->posts()->latest()->get();
       render('admin/index', ['posts' => $posts], 'admin/layout');
     }
   });

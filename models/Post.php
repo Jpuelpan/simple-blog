@@ -50,6 +50,11 @@ class Post extends Illuminate\Database\Eloquent\Model
   {
     return $query->where('status', 'Borrador');
   }
+
+  public function scopeLatest($query)
+  {
+    return $query->orderBy('created_at', 'DESC');
+  }
 }
 
 ?>
