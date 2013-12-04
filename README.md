@@ -12,16 +12,16 @@ What I need before:
 - [Composer](http://getcomposer.org/)
 - [Apache](http://www.apache.org/) or [NGINX](http://nginx.com/)
 
-Now just open you console and clone the repo
+Now just open your terminal and clone the repo.
 
     $ git clone https://github.com/Jpuelpan/simple-blog simple-blog
     $ cd simple-blog
 
-Install the dependencies
+Install the dependencies.
 
     $ composer install
     
-Create the database.php from database-base.php and change the connection data
+Create the database.php from database-base.php and change the connection data.
 
     $ cp database-base.php database.php
     
@@ -29,7 +29,7 @@ Then, load the database schema
     
     $ mysql -u user -p my-blog-db < database.sql
 
-Finally run the server through Apache or NGINX or simply
+Finally run the server through Apache, NGINX or simply
 
     $ php -S localhost:8080 index.php
 
