@@ -43,7 +43,9 @@
       </div>
 
       <div class="clearfix"></div>
-      <?php echo content(); ?>
+      <div class="row">
+        <?php echo content(); ?>
+      </div>
     </section>
   </div>
 
