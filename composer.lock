@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "362e5ceaae2ae33e69326395f8aea0c1",
+    "hash": "5c8e50bff8228fb7be9990875d9d1344",
     "packages": [
         {
             "name": "dispatch/dispatch",
-            "version": "2.6.1",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/noodlehaus/dispatch.git",
-                "reference": "f01cad1345f82e89b00362b33080b6f0cb746ec3"
+                "reference": "456cf8ff688056ec7f718f956add4ef989e0fc1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/noodlehaus/dispatch/zipball/f01cad1345f82e89b00362b33080b6f0cb746ec3",
-                "reference": "f01cad1345f82e89b00362b33080b6f0cb746ec3",
+                "url": "https://api.github.com/repos/noodlehaus/dispatch/zipball/456cf8ff688056ec7f718f956add4ef989e0fc1f",
+                "reference": "456cf8ff688056ec7f718f956add4ef989e0fc1f",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "microphp",
                 "router"
             ],
-            "time": "2013-09-30 14:41:01"
+            "time": "2013-12-02 15:21:26"
         },
         {
             "name": "fuelphp/validation",
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fuelphp/validation.git",
-                "reference": "33ff0a057a43b9e88012648687d805ebcf047f07"
+                "reference": "a8f99044e514cc01b950e4bb45413521cbd9b2de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fuelphp/validation/zipball/33ff0a057a43b9e88012648687d805ebcf047f07",
-                "reference": "33ff0a057a43b9e88012648687d805ebcf047f07",
+                "url": "https://api.github.com/repos/fuelphp/validation/zipball/a8f99044e514cc01b950e4bb45413521cbd9b2de",
+                "reference": "a8f99044e514cc01b950e4bb45413521cbd9b2de",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
             "keywords": [
                 "validation"
             ],
-            "time": "2013-11-26 14:08:08"
+            "time": "2013-12-04 12:04:49"
         },
         {
             "name": "illuminate/container",
@@ -308,16 +308,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559"
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/b0450b539d1567b2acee6467b6b323a8547b5559",
-                "reference": "b0450b539d1567b2acee6467b6b323a8547b5559",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/03ede52a1f360441b5826cb8a798e0d0a919731f",
+                "reference": "03ede52a1f360441b5826cb8a798e0d0a919731f",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2013-11-23 15:22:05"
+            "time": "2013-12-05 04:13:29"
         }
     ],
     "packages-dev": [
